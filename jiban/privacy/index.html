@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - NALHO</title>
+    <style>
+        :root {
+            --primary: #137fec;
+            --text-dark: #1E293B;
+            --text-gray: #64748B;
+            --bg-light: #F8FAFC;
+            --surface: #FFFFFF;
+            --border: #E2E8F0;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: var(--surface);
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+        header {
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        h1 {
+            font-size: 24px;
+            margin: 0;
+            color: var(--text-dark);
+        }
+        .lang-switch {
+            display: flex;
+            gap: 10px;
+        }
+        .lang-btn {
+            border: 1px solid var(--primary);
+            background: transparent;
+            color: var(--primary);
+            padding: 5px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+        .lang-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+        .lang-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+        .content {
+            display: none;
+        }
+        .content.active {
+            display: block;
+        }
+        h2 {
+            font-size: 18px;
+            margin-top: 30px;
+            border-left: 4px solid var(--primary);
+            padding-left: 10px;
+        }
+        h3 {
+            font-size: 16px;
+            color: #334155;
+            margin-top: 20px;
+        }
+        p, li {
+            font-size: 15px;
+            color: #334155;
+            margin-bottom: 10px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        .info-box {
+            background-color: #F1F5F9;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border: 1px solid var(--border);
+        }
+        .contact-box {
+            background-color: #EFF6FF;
+            border: 1px solid #BFDBFE;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        .contact-email {
+            color: var(--primary);
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .contact-email:hover {
+            text-decoration: underline;
+        }
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-gray);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 20px;
+            }
+            h2 {
+                font-size: 16px;
+            }
+            h3 {
+                font-size: 15px;
+            }
+            p, li {
+                font-size: 14px;
+            }
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .lang-switch {
+                width: 100%;
+            }
+            .lang-btn {
+                flex: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1 id="page-title">개인정보처리방침</h1>
+        <div class="lang-switch">
+            <button class="lang-btn active" onclick="setLang('ko')">한국어</button>
+            <button class="lang-btn" onclick="setLang('en')">English</button>
+        </div>
+    </header>
+
+    <div id="content-ko" class="content active">
+        <p><strong>시행일자: 2026년 1월 20일</strong></p>
+        <p>본 방침은 광고 서비스 및 구독형 유료 서비스 제공에 따른 개인정보 처리 방식을 포함합니다.</p>
+
+        <h2>1. 총칙</h2>
+        <p>주식회사 날호(영문명: NALHO, 이하 "회사"라 합니다)가 제공하는 집안일관리 애플리케이션(이하 "서비스"라 합니다)은 이용자의 개인정보를 매우 중요시하며, 「개인정보보호법」, 「정보통신망 이용촉진 및 정보보호 등에 관한 법률」 등 관련 법령을 준수하고 있습니다.</p>
+
+        <h2>2. 수집하는 개인정보 항목 및 수집 방법</h2>
+        <div class="info-box">
+            <h3>가. 수집 항목</h3>
+            <ul>
+                <li><strong>필수 수집 항목:</strong> 이메일 주소, 이름 (Google/Apple 로그인), 사용자 ID, 닉네임, 프로필 색상, 집안일 데이터, FCM 토큰</li>
+                <li><strong>자동 수집 항목:</strong> 접속 로그, 서비스 이용 시간, IP 주소, 쿠키, 기기 정보(OS, 모델명)</li>
+                <li><strong>선택 수집 항목:</strong> 동기화된 파트너 정보, 결제 내역(구독 상태), 광고 식별자(ADID/IDFA)</li>
+            </ul>
+            <h3>나. 이용하는 외부 서비스(SDK)</h3>
+            <p>회사는 서비스 제공을 위해 다음의 외부 서비스를 이용합니다:</p>
+            <ul>
+                <li><strong>Google Play Services & Firebase:</strong> 분석, 크래시 리포트, 푸시 알림, 로그인</li>
+                <li><strong>Google AdMob:</strong> 맞춤형 광고 제공</li>
+                <li><strong>RevenueCat:</strong> 구독 및 멤버십 관리</li>
+                <li><strong>Sign in with Apple:</strong> iOS 로그인</li>
+            </ul>
+        </div>
+
+        <h2>3. 개인정보의 수집 및 이용 목적</h2>
+        <ul>
+            <li>회원 관리 및 본인 확인</li>
+            <li>서비스 제공 (집안일 관리, 알림, 데이터 동기화)</li>
+            <li>서비스 개선 및 신규 서비스 개발</li>
+            <li>고객 지원 및 문의 응대</li>
+            <li>맞춤형 광고 제공 및 구독 서비스 관리</li>
+        </ul>
+
+        <h2>4. 개인정보의 보유 및 이용 기간</h2>
+        <p>원칙적으로 개인정보 수집 및 이용목적이 달성되면 지체 없이 파기합니다. 단, 관계 법령에 따라 보존할 필요가 있는 경우 해당 기간 동안 보관합니다.</p>
+        <ul>
+            <li>전자상거래 기록(계약/청약철회/대금결제): 5년</li>
+            <li>소비자 불만/분쟁 처리 기록: 3년</li>
+            <li>로그인 기록: 3개월</li>
+        </ul>
+
+        <h2>5. 개인정보의 제3자 제공</h2>
+        <p>회사는 원칙적으로 개인정보를 외부에 제공하지 않으나, 서비스 제공을 위해 필요한 최소한의 범위 내에서 다음 업체에 위탁/제공하고 있습니다.</p>
+        <ul>
+            <li><strong>AWS (Amazon Web Services):</strong> 데이터 저장 및 서버 운영</li>
+            <li><strong>Google / Apple:</strong> 로그인, 결제, 앱 분석, 광고</li>
+            <li><strong>RevenueCat:</strong> 구독 상태 관리</li>
+        </ul>
+
+        <h2>6. 개인정보의 파기절차 및 방법</h2>
+        <p>전자적 파일 형태는 복구 불가능한 기술적 방법으로 삭제하며, 종이 문서는 분쇄하거나 소각하여 파기합니다.</p>
+
+        <h2>7. 이용자의 권리 및 탈퇴</h2>
+        <p>이용자는 언제든지 앱 내 '설정 > 계정 탈퇴' 기능을 통해 회원 탈퇴 및 개인정보 삭제를 요청할 수 있습니다.</p>
+
+        <h2>8. 개인정보 보호책임자</h2>
+        <div class="contact-box">
+            <p>서비스 이용 중 발생하는 모든 개인정보 보호 관련 문의는 아래로 연락주시기 바랍니다.</p>
+            <p><strong>이메일:</strong> <a href="mailto:nalho.official@gmail.com" class="contact-email">nalho.official@gmail.com</a></p>
+        </div>
+    </div>
+
+    <div id="content-en" class="content">
+        <p><strong>Effective Date: January 20, 2026</strong></p>
+        <p>This Privacy Policy covers the processing of personal information related to advertising services and subscription-based paid services.</p>
+
+        <h2>1. General Provisions</h2>
+        <p>NALHO Co., Ltd. (hereinafter referred to as the "Company"), the provider of the household chore management application (hereinafter referred to as the "Service"), values the user's personal information and complies with relevant laws such as the "Personal Information Protection Act."</p>
+
+        <h2>2. Items and Methods of Personal Information Collection</h2>
+        <div class="info-box">
+            <h3>A. Collected Items</h3>
+            <ul>
+                <li><strong>Essential:</strong> Email address, Name (via Google/Apple Sign-In), User ID, Nickname, Profile Color, Chore Data, FCM Token.</li>
+                <li><strong>Automatic:</strong> Access logs, Service usage time, IP address, Cookies, Device Info (OS, Model).</li>
+                <li><strong>Optional:</strong> Partner info for sync, Subscription status, Advertising ID (ADID/IDFA).</li>
+            </ul>
+            <h3>B. Third-Party Services (SDKs)</h3>
+            <p>We use the following third-party services to provide and improve our Service:</p>
+            <ul>
+                <li><strong>Google Play Services & Firebase:</strong> Analytics, Crashlytics, FCM, Auth.</li>
+                <li><strong>Google AdMob:</strong> Personalized advertisements.</li>
+                <li><strong>RevenueCat:</strong> Subscription and membership management.</li>
+                <li><strong>Sign in with Apple:</strong> Authentication for iOS users.</li>
+            </ul>
+        </div>
+
+        <h2>3. Purpose of Collection and Use</h2>
+        <ul>
+            <li>User management and identification.</li>
+            <li>Service provision (Chore management, Notifications, Data sync).</li>
+            <li>Service improvement and new feature development.</li>
+            <li>Customer support.</li>
+            <li>Providing personalized ads and managing subscriptions.</li>
+        </ul>
+
+        <h2>4. Retention and Use Period</h2>
+        <p>In principle, personal information is destroyed without delay once the purpose of collection and use is achieved. However, the following information is retained for the specified period according to relevant laws:</p>
+        <ul>
+            <li>Records on contract/withdrawal/payment: 5 years</li>
+            <li>Records on consumer complaints/disputes: 3 years</li>
+            <li>Login records: 3 months</li>
+        </ul>
+
+        <h2>5. Provision to Third Parties</h2>
+        <p>We do not provide personal information to external parties in principle, except for the following service providers necessary for operation:</p>
+        <ul>
+            <li><strong>AWS (Amazon Web Services):</strong> Data storage and server operation.</li>
+            <li><strong>Google / Apple:</strong> Auth, Payments, Analytics, Ads.</li>
+            <li><strong>RevenueCat:</strong> Subscription management.</li>
+        </ul>
+
+        <h2>6. Destruction Procedures and Methods</h2>
+        <p>Electronic files are deleted using technical methods that make the records unrecoverable.</p>
+
+        <h2>7. User Rights and Account Deletion</h2>
+        <p>Users can request account deletion and personal information erasure at any time via the 'Settings > Delete Account' menu within the app.</p>
+
+        <h2>8. Data Protection Officer</h2>
+        <div class="contact-box">
+            <p>For any inquiries regarding personal information protection, please contact us below.</p>
+            <p><strong>Email:</strong> <a href="mailto:nalho.official@gmail.com" class="contact-email">nalho.official@gmail.com</a></p>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 NALHO Co., Ltd. All rights reserved.
+    </footer>
+</div>
+
+<script>
+    function setLang(lang) {
+        // Toggle Buttons
+        document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+
+        // Toggle Content
+        document.querySelectorAll('.content').forEach(content => content.classList.remove('active'));
+        document.getElementById(`content-${lang}`).classList.add('active');
+
+        // Change Title
+        const title = document.getElementById('page-title');
+        title.innerText = lang === 'ko' ? '개인정보처리방침' : 'Privacy Policy';
+    }
+</script>
+
+</body>
+</html>
