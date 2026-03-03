@@ -305,6 +305,11 @@
             justify-content: center;
         }
 
+        .hero-visual-mobile {
+            display: none;
+            margin: 1.2rem 0 1.8rem;
+        }
+
         .phone-stack {
             position: relative;
             width: 260px;
@@ -583,8 +588,12 @@
                 padding-top: 2.5rem;
             }
 
-            .hero-visual {
-                order: -1;
+            .hero-visual-desktop {
+                display: none;
+            }
+
+            .hero-visual-mobile {
+                display: flex;
             }
 
             .hero-title {
@@ -679,6 +688,31 @@
                             해야 할 집안일을 정리해 두면 같이 움직일 수 있습니다.<br>
                             날호의 <strong>집안일관리</strong>는 기억하는 수고를 덜어줍니다.
                         </p>
+                        <!-- 모바일 전용 캐러셀: 문단 바로 아래 -->
+                        <div class="hero-visual hero-visual-mobile" aria-hidden="true">
+                            <div class="phone-stack">
+                                <div class="phone-frame">
+                                    <div class="phone-inner">
+                                        <div class="phone-slide is-active">
+                                            <img src="./asset/image/Apple iPhone 16 Pro Max Screenshot 1.png" alt="집안일 목록 화면 예시">
+                                        </div>
+                                        <div class="phone-slide">
+                                            <img src="./asset/image/Apple iPhone 16 Pro Max Screenshot 2.png" alt="집안일 일정 관리 화면 예시">
+                                        </div>
+                                        <div class="phone-slide">
+                                            <img src="./asset/image/Apple iPhone 16 Pro Max Screenshot 3.png" alt="가족과 집안일 공유 화면 예시">
+                                        </div>
+                                        <div class="phone-slide">
+                                            <img src="./asset/image/Apple iPhone 16 Pro Max Screenshot 4.png" alt="집안일 통계 및 분석 화면 예시">
+                                        </div>
+                                    </div>
+                                    <div class="phone-badge">
+                                        <span class="phone-badge-dot"></span>
+                                        오늘 집안일 3개 완료!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="hero-highlight">
                             <strong>할 일 정리 · 분배 · 공유 · 알림까지 한 번에.</strong>
                             <span>집안일이 부담이 아니라 루틴이 되도록 설계했어요.</span>
@@ -704,7 +738,7 @@
                         
                     </div>
 
-                    <div class="hero-visual" aria-hidden="true">
+                    <div class="hero-visual hero-visual-desktop" aria-hidden="true">
                         <div class="phone-stack">
                             <div class="phone-frame">
                                 <div class="phone-inner">
@@ -810,25 +844,33 @@
     </div>
     <script>
         (function () {
-            const slides = document.querySelectorAll('.phone-slide');
-            if (!slides.length) return;
+            const inners = document.querySelectorAll('.phone-inner');
+            if (!inners.length) return;
 
-            let current = 0;
+            inners.forEach(inner => {
+                const slides = inner.querySelectorAll('.phone-slide');
+                if (!slides.length) return;
 
-            function showSlide(index) {
-                slides.forEach((slide, i) => {
-                    if (i === index) {
-                        slide.classList.add('is-active');
-                    } else {
-                        slide.classList.remove('is-active');
-                    }
-                });
-            }
+                let current = 0;
 
-            setInterval(() => {
-                current = (current + 1) % slides.length;
-                showSlide(current);
-            }, 3000);
+                function showSlide(index) {
+                    slides.forEach((slide, i) => {
+                        if (i === index) {
+                            slide.classList.add('is-active');
+                        } else {
+                            slide.classList.remove('is-active');
+                        }
+                    });
+                }
+
+                // 초기 상태 보장
+                showSlide(0);
+
+                setInterval(() => {
+                    current = (current + 1) % slides.length;
+                    showSlide(current);
+                }, 3000);
+            });
         })();
     </script>
 </body>
