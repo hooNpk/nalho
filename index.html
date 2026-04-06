@@ -97,9 +97,15 @@
             text-align: center;
         }
 
-        .app-card {
-            max-width: 800px;
+        .app-grid {
+            max-width: 980px;
             margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .app-card {
             background: var(--bg-light);
             border-radius: 20px;
             padding: 3rem;
@@ -172,6 +178,7 @@
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
+            .app-grid { grid-template-columns: 1fr; }
             .app-card { padding: 2rem 1.5rem; }
         }
         
@@ -201,15 +208,26 @@
         </section>
 
         <section class="app-section">
-            <a href="/nalho/jiban" class="app-card">
-                <div class="app-icon">J</div>
-                <h2 class="app-title">집안일관리</h2>
-                <p class="app-desc">
-                    복잡한 집안일, 이제 스마트하게 관리하세요.<br>
-                    가족과 함께 공유하고, 알림으로 잊지 않도록 도와줍니다.<br>
-                    여러분의 일상이 더 여유로워질 수 있도록 연구합니다.
-                </p>
-            </a>
+            <div class="app-grid">
+                <a href="/nalho/jiban" class="app-card">
+                    <div class="app-icon">J</div>
+                    <h2 class="app-title">집안일관리</h2>
+                    <p class="app-desc">
+                        복잡한 집안일, 이제 스마트하게 관리하세요.<br>
+                        가족과 함께 공유하고, 알림으로 잊지 않도록 도와줍니다.<br>
+                        여러분의 일상이 더 여유로워질 수 있도록 연구합니다.
+                    </p>
+                </a>
+                <a href="/nalho/blinkcheck" class="app-card">
+                    <div class="app-icon">👁</div>
+                    <h2 class="app-title">눈을감자 - BlinkCheck</h2>
+                    <p class="app-desc">
+                        스마트폰, 모니터를 오래 보면 눈 깜빡임이 줄어듭니다.<br>
+                        눈을감자가 깜빡임 횟수를 측정하고, 적절한 타이밍에 휴식을 안내합니다.<br>
+                        디지털 시대, 눈 건강을 지키는 가장 쉬운 방법입니다.
+                    </p>
+                </a>
+            </div>
         </section>
     </div>
 
@@ -225,15 +243,26 @@
         </section>
 
         <section class="app-section">
-            <a href="/nalho/jiban" class="app-card">
-                <div class="app-icon">J</div>
-                <h2 class="app-title">Jiban (Housework)</h2>
-                <p class="app-desc">
-                    Manage complex household chores smartly.<br>
-                    Share with family and never forget with reminders.<br>
-                    We research to make your daily life more relaxed.
-                </p>
-            </a>
+            <div class="app-grid">
+                <a href="/nalho/jiban" class="app-card">
+                    <div class="app-icon">J</div>
+                    <h2 class="app-title">Jiban (Housework)</h2>
+                    <p class="app-desc">
+                        Manage complex household chores smartly.<br>
+                        Share with family and never forget with reminders.<br>
+                        We research to make your daily life more relaxed.
+                    </p>
+                </a>
+                <a href="/nalho/blinkcheck" class="app-card">
+                    <div class="app-icon">👁</div>
+                    <h2 class="app-title">BlinkCheck</h2>
+                    <p class="app-desc">
+                        Staring at screens reduces your blink rate.<br>
+                        BlinkCheck measures your blinks and reminds you to rest at the right time.<br>
+                        The easiest way to protect your eye health in the digital age.
+                    </p>
+                </a>
+            </div>
         </section>
     </div>
 
