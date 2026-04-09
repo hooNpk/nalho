@@ -248,7 +248,7 @@
             font-size: 1rem;
         }
 
-        /* Hero Right - Visual */
+        /* Hero Right - Screenshots */
         .hero-visual {
             position: relative;
             display: flex;
@@ -260,51 +260,74 @@
             margin: 1.2rem 0 1.8rem;
         }
 
-        .blink-visual {
+        .app-logo {
+            height: 96px;
+            margin-bottom: 0.5rem;
+        }
+
+        .phone-stack {
+            position: relative;
             width: 260px;
             max-width: 100%;
-            aspect-ratio: 9 / 16;
+        }
+
+        .phone-frame {
+            position: relative;
             border-radius: 34px;
+            padding: 10px;
             background: linear-gradient(145deg, #0f172a, #1d4ed8);
             box-shadow: var(--shadow-soft);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 10px;
         }
 
-        .blink-visual-inner {
+        .phone-inner {
+            border-radius: 26px;
+            overflow: hidden;
+            background: #020617;
+            position: relative;
+        }
+
+        .phone-slide {
+            position: absolute;
+            inset: 0;
             width: 100%;
             height: 100%;
-            border-radius: 26px;
-            background: linear-gradient(160deg, #020617 0%, #1e3a5f 50%, #0f172a 100%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+
+        .phone-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .phone-slide.is-active {
+            opacity: 1;
+            position: relative;
+        }
+
+        .phone-badge {
+            position: absolute;
+            bottom: -16px;
+            right: -10px;
+            background: rgba(15, 23, 42, 0.96);
             color: white;
-        }
-
-        .blink-eye-icon {
-            font-size: 4rem;
-            animation: blink-anim 3s ease-in-out infinite;
-        }
-
-        @keyframes blink-anim {
-            0%, 90%, 100% { opacity: 1; transform: scaleY(1); }
-            95% { opacity: 0.8; transform: scaleY(0.1); }
-        }
-
-        .blink-visual-text {
-            font-size: 1rem;
-            font-weight: 600;
-            opacity: 0.9;
-        }
-
-        .blink-visual-sub {
+            padding: 0.55rem 0.9rem;
+            border-radius: 999px;
             font-size: 0.75rem;
-            opacity: 0.6;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            border: 1px solid rgba(148, 163, 184, 0.4);
+            backdrop-filter: blur(10px);
+        }
+
+        .phone-badge-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 999px;
+            background: #22c55e;
         }
 
         /* Value Section */
@@ -501,7 +524,7 @@
                 font-size: 0.98rem;
             }
 
-            .blink-visual {
+            .phone-stack {
                 width: 220px;
             }
 
@@ -550,6 +573,7 @@
             <section class="hero">
                 <div class="container hero-inner">
                     <div class="hero-copy">
+                        <img src="./asset/AppIcon~ios-marketing.png" alt="눈을감자 앱 로고" class="app-logo">
                         <div class="eyebrow">
                             <span class="eyebrow-dot"></span>
                             눈 건강 체크
@@ -565,11 +589,23 @@
                         </p>
                         <!-- Mobile carousel -->
                         <div class="hero-visual hero-visual-mobile" aria-hidden="true">
-                            <div class="blink-visual">
-                                <div class="blink-visual-inner">
-                                    <div class="blink-eye-icon">👁</div>
-                                    <div class="blink-visual-text">BlinkCheck</div>
-                                    <div class="blink-visual-sub">눈 깜빡임 측정 중...</div>
+                            <div class="phone-stack">
+                                <div class="phone-frame">
+                                    <div class="phone-inner">
+                                        <div class="phone-slide is-active">
+                                            <img src="./asset/Apple iPhone 16 Pro Max Screenshot 1.png" alt="눈을감자 측정 화면 예시">
+                                        </div>
+                                        <div class="phone-slide">
+                                            <img src="./asset/Apple iPhone 16 Pro Max Screenshot 2.png" alt="눈을감자 결과 화면 예시">
+                                        </div>
+                                        <div class="phone-slide">
+                                            <img src="./asset/Apple iPhone 16 Pro Max Screenshot 3.png" alt="눈을감자 리포트 화면 예시">
+                                        </div>
+                                    </div>
+                                    <div class="phone-badge">
+                                        <span class="phone-badge-dot"></span>
+                                        눈 건강 체크 중!
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -598,11 +634,23 @@
                     </div>
 
                     <div class="hero-visual hero-visual-desktop" aria-hidden="true">
-                        <div class="blink-visual">
-                            <div class="blink-visual-inner">
-                                <div class="blink-eye-icon">👁</div>
-                                <div class="blink-visual-text">BlinkCheck</div>
-                                <div class="blink-visual-sub">눈 깜빡임 측정 중...</div>
+                        <div class="phone-stack">
+                            <div class="phone-frame">
+                                <div class="phone-inner">
+                                    <div class="phone-slide is-active">
+                                        <img src="./asset/Apple iPhone 16 Pro Max Screenshot 1.png" alt="눈을감자 측정 화면 예시">
+                                    </div>
+                                    <div class="phone-slide">
+                                        <img src="./asset/Apple iPhone 16 Pro Max Screenshot 2.png" alt="눈을감자 결과 화면 예시">
+                                    </div>
+                                    <div class="phone-slide">
+                                        <img src="./asset/Apple iPhone 16 Pro Max Screenshot 3.png" alt="눈을감자 리포트 화면 예시">
+                                    </div>
+                                </div>
+                                <div class="phone-badge">
+                                    <span class="phone-badge-dot"></span>
+                                    눈 건강 체크 중!
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -686,5 +734,35 @@
             </div>
         </footer>
     </div>
+    <script>
+        (function () {
+            const inners = document.querySelectorAll('.phone-inner');
+            if (!inners.length) return;
+
+            inners.forEach(inner => {
+                const slides = inner.querySelectorAll('.phone-slide');
+                if (!slides.length) return;
+
+                let current = 0;
+
+                function showSlide(index) {
+                    slides.forEach((slide, i) => {
+                        if (i === index) {
+                            slide.classList.add('is-active');
+                        } else {
+                            slide.classList.remove('is-active');
+                        }
+                    });
+                }
+
+                showSlide(0);
+
+                setInterval(() => {
+                    current = (current + 1) % slides.length;
+                    showSlide(current);
+                }, 3000);
+            });
+        })();
+    </script>
 </body>
 </html>
