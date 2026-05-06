@@ -1,66 +1,94 @@
-# 눈을감자 (BlinkCheck) — NALHO
+# BlinkCheck (눈을감자) — NALHO
 
-> 스마트폰 카메라로 눈 깜빡임을 실시간 측정하고 안구건조증을 예방하는 무료 모바일 앱.
+> A free mobile app that measures your blink rate in real time using your smartphone's front camera and coaches you to prevent dry eye syndrome.
 
-## 앱 소개
+## What it does
 
-눈을감자(BlinkCheck)는 스마트폰 전면 카메라와 온디바이스 AI를 사용해 사용자의 눈 깜빡임 횟수를 실시간으로 분석합니다. 화면을 집중해서 볼 때 눈 깜빡임은 최대 80%까지 줄어들며, 이는 안구건조증의 주요 원인입니다. 눈을감자는 이 습관을 수치화하고 맞춤 코칭으로 개선을 돕습니다.
+BlinkCheck uses on-device AI to analyze how often you blink while looking at a screen. Most people blink 80% less when focused on a display — a leading cause of dry, irritated eyes. BlinkCheck quantifies that invisible habit and coaches you to fix it.
 
-- 개발사: NALHO
-- 연락처: nalho.service@gmail.com
-- 플랫폼: iOS (App Store), Android 준비 중
-- 가격: 무료
-- App Store: https://apps.apple.com/kr/app/%EB%88%88%EC%9D%84%EA%B0%90%EC%9E%90-blinkcheck/id6503923480
+- **Developer:** NALHO
+- **Contact:** nalho.service@gmail.com
+- **Platform:** iOS (App Store), Android coming soon
+- **Price:** Free
+- **App Store:** https://apps.apple.com/kr/app/%EB%88%88%EC%9D%84%EA%B0%90%EC%9E%90-blinkcheck/id6503923480
 
-## 핵심 기능
+## Key Features
 
-### 깜빡임 측정 (Blink Test)
-3~60분 세션 동안 분당 깜빡임 횟수(BPM)를 측정하고 심각도를 판정합니다.
+### Blink Test
+Measures blinks per minute (BPM) over a 3–60 minute session and classifies severity:
 
-심각도 기준:
+- **Normal:** ≥20 BPM
+- **Mild:** 14–19 BPM — reduced blinking; conscious effort recommended
+- **Moderate:** 8–13 BPM — dry eye risk
+- **Severe:** <8 BPM — consult an eye doctor
+
+### Blink Coach
+Delivers personalized vibration alerts timed to your natural blink rate (set 20% tighter than your measured baseline). Distinguishes natural blinks from alert-triggered ones to measure coaching effectiveness. Includes 20-20-20 rule mode (look 20 ft away for 20 seconds every 20 minutes).
+
+### Calibration
+A 10-second personalized setup that tunes detection thresholds to your eyes. iOS uses ARKit; Android uses ML Kit. Accounts for head posture to warn on excessive rotation.
+
+### Records & Analytics
+Session history with trend analysis (improving / worsening / stable), multi-period filters (1 week / 1 month / 3 months / all-time), and test vs. coaching comparison charts.
+
+## Why use BlinkCheck?
+
+| Other solutions | BlinkCheck |
+|---|---|
+| Generic 20-20-20 timers | Personalized coaching based on your actual blink rate |
+| Guesswork | Real-time blink detection via on-device AI |
+| Stores your camera feed | Zero data leaves your device — ever |
+
+## Who it's for
+
+- Office workers and developers with 8+ hours of screen time daily
+- Students in long study or exam-prep sessions
+- Post-LASIK / LASEK patients who need to blink consciously during recovery
+- Anyone diagnosed with dry eye syndrome
+
+## Technical details
+
+- **Privacy:** All camera processing is on-device. No video is stored or transmitted.
+- **Detection algorithm:** Dual-threshold hysteresis state machine to filter noise
+- **Platform optimization:** iOS (ARKit, high fidelity), Android (ML Kit, tuned thresholds)
+- **Local storage:** MMKV key-value store — no backend
+
+## FAQ
+
+**Does BlinkCheck store my camera footage?**
+No. All processing is done on-device in real time. No video data is stored or sent to any server.
+
+**What's a healthy blink rate?**
+20+ BPM is normal. Screen focus can drop that to 3–5 BPM. BlinkCheck measures exactly where you stand.
+
+**Can I use it after LASIK or LASEK surgery?**
+Yes — it's especially useful during recovery when conscious blinking is recommended.
+
+**What is the 20-20-20 rule?**
+Every 20 minutes, look at something 20 feet away for 20 seconds to reduce eye strain. BlinkCheck has a coaching mode that reminds you automatically.
+
+**Which devices are supported?**
+Currently iPhone (iOS 15.5+) via the App Store. Android is coming soon.
+
+---
+
+## 앱 소개 (한국어)
+
+눈을감자(BlinkCheck)는 스마트폰 전면 카메라와 온디바이스 AI를 사용해 사용자의 눈 깜빡임 횟수를 실시간으로 분석합니다. 화면 집중 시 눈 깜빡임은 최대 80%까지 줄어들며, 이는 안구건조증의 주요 원인입니다.
+
+### 심각도 기준
 - 정상: 분당 20회 이상
 - 경미: 분당 14~19회
 - 주의: 분당 8~13회 (안구건조증 위험)
 - 심각: 분당 8회 미만 (안과 상담 권장)
 
-### 깜빡임 코칭 (Blink Coach)
-사용자의 자연 깜빡임 주기를 기반으로 맞춤 진동 알림을 설정합니다. 자연 깜빡임(자발)과 알림 후 유발된 깜빡임을 구분하여 코칭 효과를 측정합니다. 20-20-20 규칙 모드 지원(20분마다 20초 원거리 응시 알림).
-
-### 캘리브레이션 (Calibration)
-10초 설정으로 사용자 고유의 눈 감지 임계값을 조정합니다. iOS는 ARKit, Android는 ML Kit 기반으로 플랫폼별 최적화.
-
-### 기록 & 분석 (Records)
-세션 이력, 트렌드 분석(개선/악화/유지), 측정-코칭 비교 차트를 제공합니다.
-
-## 기술 특성
-
-- **프라이버시**: 모든 카메라 처리는 온디바이스. 영상 데이터 저장·전송 없음.
-- **감지 알고리즘**: 이중 임계값 히스테리시스 상태머신으로 노이즈 필터링
-- **플랫폼**: iOS (ARKit 고정밀도), Android (ML Kit, 준비 중)
-- **데이터 저장**: 로컬 MMKV 스토리지 (백엔드 없음)
-
-## 대상 사용자
-
+### 대상 사용자
 - PC·스마트폰을 하루 8시간 이상 사용하는 직장인·개발자
 - 장시간 학습하는 학생
 - 라식·라섹 수술 후 회복 중인 환자
 - 안구건조증 진단을 받은 사람
 
-## 자주 묻는 질문
+## Related pages
 
-**카메라 영상을 저장하나요?**
-아니요. 모든 처리는 기기 내에서만 이루어지며 영상은 저장·전송되지 않습니다.
-
-**정상 깜빡임 횟수는?**
-분당 20회 이상이 정상입니다. 화면 집중 시 3~5회까지 감소할 수 있습니다.
-
-**라식 수술 후 사용 가능한가요?**
-네, 회복기 의식적 깜빡임 훈련에 유용합니다.
-
-**20-20-20 규칙이란?**
-20분마다 6m 이상 먼 곳을 20초 바라보는 눈 피로 예방법으로, 앱이 자동으로 알림을 드립니다.
-
-## 관련 페이지
-
-- [개인정보처리방침](https://hoonpk.github.io/nalho/blinkcheck/privacy/)
-- [NALHO 소개](https://hoonpk.github.io/nalho/)
+- [Privacy Policy](https://hoonpk.github.io/nalho/blinkcheck/privacy/)
+- [About NALHO](https://hoonpk.github.io/nalho/)

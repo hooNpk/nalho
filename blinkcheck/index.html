@@ -1014,8 +1014,8 @@
             document.querySelector('meta[name="description"]').setAttribute('content', t.metaDescription);
             document.querySelector('meta[property="og:title"]').setAttribute('content', t.ogTitle);
             document.querySelector('meta[property="og:description"]').setAttribute('content', t.ogDescription);
-            document.querySelector('meta[property="twitter:title"]').setAttribute('content', t.ogTitle);
-            document.querySelector('meta[property="twitter:description"]').setAttribute('content', t.ogDescription);
+            document.querySelector('meta[name="twitter:title"]').setAttribute('content', t.ogTitle);
+            document.querySelector('meta[name="twitter:description"]').setAttribute('content', t.ogDescription);
             document.querySelector('meta[property="og:locale"]').setAttribute('content', lang === 'ko' ? 'ko_KR' : 'en_US');
 
             // Text nodes
