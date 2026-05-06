@@ -1037,10 +1037,19 @@
             });
 
             // Toggle button state
-            document.getElementById('btn-ko').classList.toggle('active', lang === 'ko');
-            document.getElementById('btn-ko').setAttribute('aria-pressed', String(lang === 'ko'));
-            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-            document.getElementById('btn-en').setAttribute('aria-pressed', String(lang === 'en'));
+            const btnKo = document.getElementById('btn-ko');
+            const btnEn = document.getElementById('btn-en');
+            btnKo.classList.remove('active');
+            btnEn.classList.remove('active');
+            if (lang === 'ko') {
+                btnKo.classList.add('active');
+                btnKo.setAttribute('aria-pressed', 'true');
+                btnEn.setAttribute('aria-pressed', 'false');
+            } else {
+                btnEn.classList.add('active');
+                btnEn.setAttribute('aria-pressed', 'true');
+                btnKo.setAttribute('aria-pressed', 'false');
+            }
 
             localStorage.setItem('blinkcheck-lang', lang);
         }
