@@ -790,13 +790,13 @@
                                 <div class="phone-frame">
                                     <div class="phone-inner">
                                         <div class="phone-slide is-active">
-                                            <img src="./asset/Apple iPhone 16 Pro Max Screenshot 1.png" data-i18n-alt="img.screen1.alt" alt="눈을감자 측정 화면 예시">
+                                            <img src="./asset/screen-ios-kr/Apple iPhone 16 Pro Max Screenshot 1.png" data-screen-img="Apple iPhone 16 Pro Max Screenshot 1.png" data-i18n-alt="img.screen1.alt" alt="눈을감자 측정 화면 예시">
                                         </div>
                                         <div class="phone-slide">
-                                            <img src="./asset/Apple iPhone 16 Pro Max Screenshot 2.png" data-i18n-alt="img.screen2.alt" alt="눈을감자 결과 화면 예시">
+                                            <img src="./asset/screen-ios-kr/Apple iPhone 16 Pro Max Screenshot 2.png" data-screen-img="Apple iPhone 16 Pro Max Screenshot 2.png" data-i18n-alt="img.screen2.alt" alt="눈을감자 결과 화면 예시">
                                         </div>
                                         <div class="phone-slide">
-                                            <img src="./asset/Apple iPhone 16 Pro Max Screenshot 3.png" data-i18n-alt="img.screen3.alt" alt="눈을감자 리포트 화면 예시">
+                                            <img src="./asset/screen-ios-kr/Apple iPhone 16 Pro Max Screenshot 3.png" data-screen-img="Apple iPhone 16 Pro Max Screenshot 3.png" data-i18n-alt="img.screen3.alt" alt="눈을감자 리포트 화면 예시">
                                         </div>
                                     </div>
                                     <div class="phone-badge">
@@ -835,13 +835,13 @@
                             <div class="phone-frame">
                                 <div class="phone-inner">
                                     <div class="phone-slide is-active">
-                                        <img src="./asset/Apple iPhone 16 Pro Max Screenshot 1.png" data-i18n-alt="img.screen1.alt" alt="눈을감자 측정 화면 예시">
+                                        <img src="./asset/screen-ios-kr/Apple iPhone 16 Pro Max Screenshot 1.png" data-screen-img="Apple iPhone 16 Pro Max Screenshot 1.png" data-i18n-alt="img.screen1.alt" alt="눈을감자 측정 화면 예시">
                                     </div>
                                     <div class="phone-slide">
-                                        <img src="./asset/Apple iPhone 16 Pro Max Screenshot 2.png" data-i18n-alt="img.screen2.alt" alt="눈을감자 결과 화면 예시">
+                                        <img src="./asset/screen-ios-kr/Apple iPhone 16 Pro Max Screenshot 2.png" data-screen-img="Apple iPhone 16 Pro Max Screenshot 2.png" data-i18n-alt="img.screen2.alt" alt="눈을감자 결과 화면 예시">
                                     </div>
                                     <div class="phone-slide">
-                                        <img src="./asset/Apple iPhone 16 Pro Max Screenshot 3.png" data-i18n-alt="img.screen3.alt" alt="눈을감자 리포트 화면 예시">
+                                        <img src="./asset/screen-ios-kr/Apple iPhone 16 Pro Max Screenshot 3.png" data-screen-img="Apple iPhone 16 Pro Max Screenshot 3.png" data-i18n-alt="img.screen3.alt" alt="눈을감자 리포트 화면 예시">
                                     </div>
                                 </div>
                                 <div class="phone-badge">
@@ -1034,6 +1034,12 @@
             document.querySelectorAll('[data-i18n-alt]').forEach(el => {
                 const key = el.getAttribute('data-i18n-alt');
                 if (t[key] !== undefined) el.setAttribute('alt', t[key]);
+            });
+
+            // Screenshot images
+            const folder = lang === 'ko' ? 'screen-ios-kr' : 'screen-ios-en';
+            document.querySelectorAll('[data-screen-img]').forEach(img => {
+                img.src = `./asset/${folder}/${img.getAttribute('data-screen-img')}`;
             });
 
             // Toggle button state
