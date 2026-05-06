@@ -4,7 +4,7 @@
 
 ## What it does
 
-BlinkCheck uses on-device AI to analyze how often you blink while looking at a screen. Most people blink 80% less when focused on a display — a leading cause of dry, irritated eyes. BlinkCheck quantifies that invisible habit and coaches you to fix it.
+BlinkCheck uses on-device AI to analyze how often you blink while looking at a screen. Most people blink 80% less when focused on a display — a leading cause of dry, irritated eyes. BlinkCheck quantifies that invisible habit and coaches you to blink more.
 
 - **Developer:** NALHO
 - **Contact:** nalho.service@gmail.com
